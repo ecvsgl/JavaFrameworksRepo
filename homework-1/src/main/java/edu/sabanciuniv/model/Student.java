@@ -21,6 +21,7 @@ public class Student {
     // Constructors full & empty
     public Student() {
     }
+
     public Student(String studentName, String studentSurname, double studentGPA) {
         this.studentName = studentName;
         this.studentSurname = studentSurname;
@@ -53,8 +54,6 @@ public class Student {
     }
 
     // equals & hashCode & toString
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
