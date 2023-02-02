@@ -4,6 +4,7 @@ import edu.sabanciuniv.model.Student;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,13 +30,20 @@ public class TestStudent {
         EntityManager entityManager = emf.createEntityManager();
 
         //Looping for-each in studentsList pass each student to emf.
+            //        for (Student s : studentsList){
+            //            entityManager.getTransaction().begin();
+            //
+            //            entityManager.persist(s);
+            //
+            //            entityManager.getTransaction().commit();
+            //        }
 
-        for (Student s : studentsList){
-            entityManager.getTransaction().begin();
-
-            entityManager.persist(s);
-
-            entityManager.getTransaction().commit();
-        }
+        //Functionality enhanced via
+        Student.saveStudents(studentsList, entityManager);
+        Student.findAllStudents(entityManager);
+        Student.findByStudentName(entityManager,stu1.getStudentName());
+        Student.findByStudentNameAndGPA(entityManager,stu1.getStudentName(),stu1.getStudentGPA());
+        Student.updateStudentGPA(entityManager,stu3, 3.5);
+        Student.removeStudent(entityManager, stu2);
     }
 }

@@ -23,11 +23,11 @@ public class TestStore {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlPU");
         EntityManager entityManager = emf.createEntityManager();
 
-        // saveStores(storeList, entityManager);
-        // findAllStores(entityManager);
-        // findByStoreName(entityManager, store1.getStoreName());
-        // findByStoreNameAndSquareMeter(entityManager, store2.getStoreName(), store2.getSquareMeter());
-        // updateStorePhone(entityManager, store3, "5555555555");
+        saveStores(storeList, entityManager);
+        findAllStores(entityManager);
+        findByStoreName(entityManager, store1.getStoreName());
+        findByStoreNameAndSquareMeter(entityManager, store2.getStoreName(), store2.getSquareMeter());
+        updateStorePhone(entityManager, store3, "5555555555");
         deleteStore(entityManager, store2);
     }
 
